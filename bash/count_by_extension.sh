@@ -6,7 +6,7 @@ declare -A COUNT_BY_EXTENSION
 
 for FILE in $INPUT; do
   FILENAME=$(basename -- "$FILE")
-  if [[ ! "$FILENAME" =~ ^[^.]+\.[^.]+$ ]]; then
+  if [ ${#FILENAME} -lt 3 ] || [[ ! "${FILENAME:1:-1}" == *.* ]]; then
     EXTENSION="No extension"
   else
     EXTENSION=${FILENAME##*.}
