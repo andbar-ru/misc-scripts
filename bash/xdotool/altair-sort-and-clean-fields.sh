@@ -1,9 +1,4 @@
-#!/bin/sh
+#!/bin/bash
+source ./scripts/functions.sh
 
-xdotool sleep 0.1
-xdotool key Control_R+Shift_R+i
-xdotool sleep 2
-xdotool key Control_R+o
-xdotool type "!sort-and-clean"
-xdotool key Return
-xdotool key Control_R+Shift_R+i
+runDevToolsSnippet sort-and-clean
